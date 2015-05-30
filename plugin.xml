@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.cranberrygame.cordova.plugin.ad.unityads"
+    version="1.0.0">
+	
+    <name>Cordova UnityAds plugin</name>
+    <description>Show unityads video ad and rewarded video ad</description>
+    <author>Sang Ki Kwon (Cranberrygame)</author>	
+    <license>MIT</license>
+    <keywords>cordova,plugin,ad,video,unityads,monetisation</keywords>
+    <repo>https://github.com/cranberrygame/cordova-plugin-ad-unityads</repo>
+    <issue>https://github.com/cranberrygame/cordova-plugin-ad-unityads/issues</issue>	
+	<engines>
+	    <engine name="cordova" version=">=3.0.0" />
+	</engines>
+ 	
+    <js-module src="www/unityads.js">
+        <clobbers target="window.unityads" />
+    </js-module>    
+    
+	<!-- android -->
+	<platform name="android">
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="UnityAdsPlugin">
+				<param name="android-package" value="com.cranberrygame.cordova.plugin.ad.unityads.UnityAdsPlugin"/>
+			</feature>
+		</config-file>
+
+		<config-file target="AndroidManifest.xml" parent="/*">
+			<uses-permission android:name="android.permission.INTERNET"/>
+			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>			
+		</config-file>
+
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+			<activity android:name="com.unity3d.ads.android.view.UnityAdsFullscreenActivity"
+			android:configChanges=
+			 "fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
+			android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+			android:hardwareAccelerated="true" />
+		</config-file>
+
+		<source-file src="src/android/UnityAdsPlugin.java" target-dir="src/com/cranberrygame/cordova/plugin/ad/unityads" />
+		<source-file src="src/android/unity-ads.jar" target-dir="libs" />
+	</platform>
+
+	<!-- ios -->
+	<platform name="ios">
+		<config-file target="config.xml" parent="/*">
+			<feature name="UnityAdsPlugin">
+				<param name="ios-package" value="UnityAdsPlugin" />
+			</feature>
+		</config-file>
+
+		<header-file src="src/ios/UnityAdsPlugin.h" />
+		<source-file src="src/ios/UnityAdsPlugin.m" />
+
+		<framework src="src/ios/UnityAds.framework" custom="true"/>
+        <resource-file src="src/ios/UnityAds.bundle" />
+		<framework src="StoreKit.framework"/>
+		<framework src="AdSupport.framework"/>
+        <framework src="CoreTelephony.framework"/>
+        <framework src="SystemConfiguration.framework"/>
+	</platform>
+</plugin>

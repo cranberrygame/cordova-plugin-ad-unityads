@@ -1,0 +1,76 @@
+<html>
+<head>
+	<script type="text/javascript" src="cordova.js"></script>
+</head>
+<body>
+
+<script>
+
+var gameId = "42517";
+var videoAdPlacementId = "defaultZone";
+var rewardedVideoAdPlacementId = "rewardedVideoZone";
+var isTest = true;
+/*
+var gameId;
+var videoAdPlacementId;
+var rewardedVideoAdPlacementId;
+var isTest = true;
+//android
+if (navigator.userAgent.match(/Android/i)) {
+	gameId = "42517";
+	videoAdPlacementId = "defaultZone";
+	rewardedVideoAdPlacementId = "rewardedVideoZone";
+}
+//ios
+else if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i)) {
+	gameId = "42519";
+	videoAdPlacementId = "defaultZone";
+	rewardedVideoAdPlacementId = "rewardedVideoZone";
+}
+*/
+
+document.addEventListener("deviceready", function(){
+	//if no license key, 2% ad traffic share for dev support.
+	//you can get free license key from https://play.google.com/store/apps/details?id=com.cranberrygame.pluginsforcordova
+	//window.unityads.setLicenseKey("yourEmailId@yourEmaildDamin.com", "yourFreeLicenseKey");
+
+	window.unityads.setUp(gameId, videoAdPlacementId, rewardedVideoAdPlacementId, isTest);
+	
+	//
+	window.unityads.onVideoAdLoaded = function() {
+		alert('onVideoAdLoaded');
+	};	
+	window.unityads.onVideoAdShown = function() {
+		alert('onVideoAdShown');
+	};
+	window.unityads.onVideoAdHidden = function() {
+		alert('onVideoAdHidden');
+	};
+	//
+	window.unityads.onRewardedVideoAdLoaded = function() {
+		alert('onRewardedVideoAdLoaded');
+	};	
+	window.unityads.onRewardedVideoAdShown = function() {
+		alert('onRewardedVideoAdShown');
+	};
+	window.unityads.onRewardedVideoAdHidden = function() {
+		alert('onRewardedVideoAdHidden');
+	};	
+	window.unityads.onRewardedVideoAdCompleted = function() {
+		alert('onRewardedVideoAdCompleted');
+	};
+}, false);
+</script>
+
+<p><button onclick="window.unityads.showVideoAd();">showVideoAd</button></p>
+<br>
+<p><button onclick="window.unityads.showRewardedVideoAd();">showRewardedVideoAd</button></p>
+<br>
+<p><button onclick="alert(window.unityads.loadedVideoAd());">loadedVideoAd</button></p>
+<p><button onclick="alert(window.unityads.loadedRewardedVideoAd());">loadedRewardedVideoAd</button></p>
+<br>
+<p><button onclick="alert(window.unityads.isShowingVideoAd());">isShowingVideoAd</button></p>
+<p><button onclick="alert(window.unityads.isShowingRewardedVideoAd());">isShowingRewardedVideoAd</button></p>
+
+</body>
+</html>
