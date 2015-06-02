@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="com.cranberrygame.cordova.plugin.ad.unityads"
-    version="1.0.0">
+    version="1.0.1">
 	
     <name>Cordova UnityAds plugin</name>
     <description>Show unityads video ad and rewarded video ad</description>
@@ -42,6 +42,7 @@
 		</config-file>
 
 		<source-file src="src/android/UnityAdsPlugin.java" target-dir="src/com/cranberrygame/cordova/plugin/ad/unityads" />
+		
 		<source-file src="src/android/unity-ads.jar" target-dir="libs" />
 	</platform>
 

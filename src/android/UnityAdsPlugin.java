@@ -141,6 +141,18 @@ public class UnityAdsPlugin extends CordovaPlugin {
 		super.initialize(cordova, webView);
     }
 	
+	//@Override
+	//public void onCreate(Bundle savedInstanceState) {//build error
+	//	super.onCreate(savedInstanceState);
+	//	//
+	//}
+	
+	//@Override
+	//public void onStart() {//build error
+	//	super.onStart();
+	//	//
+	//}
+	
 	@Override
 	public void onPause(boolean multitasking) {
 		super.onPause(multitasking);
@@ -152,6 +164,12 @@ public class UnityAdsPlugin extends CordovaPlugin {
 		super.onResume(multitasking);
 		UnityAds.changeActivity(cordova.getActivity());
 	}
+	
+	//@Override
+	//public void onStop() {//build error
+	//	super.onStop();
+	//	//
+	//}
 	
 	@Override
 	public void onDestroy() {

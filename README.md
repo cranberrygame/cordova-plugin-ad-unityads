@@ -1,7 +1,7 @@
 Cordova UnityAds plugin
 ====================
 # Overview #
-Show unityads video ad and rewarded video ad.
+Show unityads video ad and rewarded video ad (pays high $0.05 per ad view).
 
 [android, ios] [cordova cli] [xdk]
 
@@ -37,7 +37,7 @@ Plugin ID: com.cranberrygame.cordova.plugin.ad.unityads
 ```
 
 ## Cocoon ##
-https://cocoon.io - Create project - [specific project] - Setting - Plugins - Search - cranberrygame - unityads
+https://cocoon.io - Create project - [specific project] - Setting - Plugins - Search - cranberrygame - unityads - Save
 
 ## Phonegap build service (config.xml) ##
 https://build.phonegap.com/ - Apps - [specific project] - Update code - Zip file including config.xml
