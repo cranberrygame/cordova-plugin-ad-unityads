@@ -56,8 +56,6 @@ extern NSString * const kUnityAdsOptionVideoUsesDeviceOrientation;
 - (void)setDebugMode:(BOOL)debugMode;
 - (void)setTestMode:(BOOL)testModeEnabled;
 - (void)enableUnityDeveloperInternalTestMode;
-- (void)setCampaignDataURL:(NSString *)campaignDataUrl;
-- (void)setUnityVersion:(NSString *)unityVersion;
 
 - (BOOL)isDebugMode;
 - (BOOL)startWithGameId:(NSString *)gameId andViewController:(UIViewController *)viewController;
@@ -65,7 +63,6 @@ extern NSString * const kUnityAdsOptionVideoUsesDeviceOrientation;
 - (BOOL)setViewController:(UIViewController *)viewController;
 - (BOOL)canShowAds;
 - (BOOL)canShow;
-- (BOOL)canShowZone:(NSString *)zoneId;
 - (BOOL)setZone:(NSString *)zoneId;
 - (BOOL)setZone:(NSString *)zoneId withRewardItem:(NSString *)rewardItemKey;
 - (BOOL)show:(NSDictionary *)options;
