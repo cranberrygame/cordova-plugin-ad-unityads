@@ -48,7 +48,6 @@
 
 	<!-- ios -->
 	<platform name="ios">
-		
 		<config-file target="config.xml" parent="/*">
 			<feature name="UnityAdsPlugin">
 				<param name="ios-package" value="UnityAdsPlugin" />
@@ -58,25 +57,11 @@
 		<header-file src="src/ios/UnityAdsPlugin.h" />
 		<source-file src="src/ios/UnityAdsPlugin.m" />
 
-
 		<framework src="src/ios/UnityAds.framework" custom="true"/>
-
-
-
-<!--
-        <resource-file src="src/ios/UnityAds.framework/Resources/Info.plist">
-        <resource-file src="src/ios/UnityAds.framework/Resources/en.lproj"/>
--->
-
-
-
-
-        <resource-file src="src/ios/UnityAds.bundle" />
-        
+        <resource-file src="src/ios/UnityAds.bundle" />		
 		<framework src="StoreKit.framework"/>
 		<framework src="AdSupport.framework"/>
         <framework src="CoreTelephony.framework"/>
         <framework src="SystemConfiguration.framework"/>
-       
 	</platform>
 </plugin>
