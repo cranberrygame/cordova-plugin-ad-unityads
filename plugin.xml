@@ -64,9 +64,9 @@
 <!--
         <resource-file src="src/ios/UnityAds.framework/Resources/Info.plist">
         <resource-file src="src/ios/UnityAds.framework/Resources/en.lproj/InfoPlist.strings"/>
-
+-->
         <resource-file src="src/ios/UnityAds.bundle" />
--->        
+        
 		<framework src="StoreKit.framework"/>
 		<framework src="AdSupport.framework"/>
         <framework src="CoreTelephony.framework"/>
