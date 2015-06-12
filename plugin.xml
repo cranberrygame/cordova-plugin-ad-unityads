@@ -53,10 +53,10 @@
 				<param name="ios-package" value="UnityAdsPlugin" />
 			</feature>
 		</config-file>
-
+<!--
 		<header-file src="src/ios/UnityAdsPlugin.h" />
 		<source-file src="src/ios/UnityAdsPlugin.m" />
-
+-->
 		<framework src="src/ios/UnityAds.framework" custom="true"/>
 <!-- -->
         <resource-file src="src/ios/UnityAds.framework/Resources/Info.plist">
