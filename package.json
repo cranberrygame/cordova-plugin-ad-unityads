@@ -1,0 +1,39 @@
+{
+  "name": "cordova-plugin-ad-unityads",
+  "version": "1.0.24",
+  "description": "Show unityads video ad and rewarded video ad",
+  "cordova": {
+    "id": "cordova-plugin-ad-unityads",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cranberrygame/cordova-plugin-ad-unityads.git"
+  },
+  "keywords": [
+    "cordova",
+    "plugin",
+    "ad",
+    "video",
+    "unityads",
+    "monetisation",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "author": "cranberrygame",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cranberrygame/cordova-plugin-ad-unityads/issues"
+  },
+  "homepage": "https://github.com/cranberrygame/cordova-plugin-ad-unityads#readme"
+}

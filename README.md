@@ -7,7 +7,7 @@ Show unityads video ad and rewarded video ad (pays high $0.05 per ad view).
 
 Requires unityads account http://unityads.unity3d.com
 
-UnityAds SDK v1.4.2 April 15th, 2015 (android)
+UnityAds SDK v1.4.2 April 15th, 2015 (android)<br>
 UnityAds SDK v1.3.12 March 10th, 2015 (ios)
 
 This is open source cordova plugin.

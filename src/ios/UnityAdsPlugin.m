@@ -79,9 +79,11 @@ static NSString *TEST_REWARDED_VIDEO_AD_PLACEMENT_ID = @"rewardedVideoZone";
 	self.licenseKey_ = licenseKey;
 	
 	//
-	NSString *str1 = [self md5:[NSString stringWithFormat:@"com.cranberrygame.cordova.plugin.: %@", email]];
-	NSString *str2 = [self md5:[NSString stringWithFormat:@"com.cranberrygame.cordova.plugin.ad.unityads: %@", email]];
-	if(licenseKey_ != Nil && ([licenseKey_ isEqualToString:str1] || [licenseKey_ isEqualToString:str2])){
+	NSString *str1 = [self md5:[NSString stringWithFormat:@"cordova-plugin-: %@", email]];
+	NSString *str2 = [self md5:[NSString stringWithFormat:@"cordova-plugin-ad-unityads: %@", email]];
+	NSString *str3 = [self md5:[NSString stringWithFormat:@"com.cranberrygame.cordova.plugin.: %@", email]];
+	NSString *str4 = [self md5:[NSString stringWithFormat:@"com.cranberrygame.cordova.plugin.ad.unityads: %@", email]];
+	if(licenseKey_ != Nil && ([licenseKey_ isEqualToString:str1] || [licenseKey_ isEqualToString:str2] || [licenseKey_ isEqualToString:str3] || [licenseKey_ isEqualToString:str4])){
 		self.validLicenseKey = YES;
 		NSArray *excludedLicenseKeys = [NSArray arrayWithObjects: @"xxx", nil];
 		for (int i = 0 ; i < [excludedLicenseKeys count] ; i++) {
