@@ -57,12 +57,14 @@
 		<header-file src="src/ios/UnityAdsPlugin.h" />
 		<source-file src="src/ios/UnityAdsPlugin.m" />
 -->
+<!--
 		<framework src="src/ios/UnityAds.framework" custom="true"/>
-<!-- -->
+
         <resource-file src="src/ios/UnityAds.framework/Resources/Info.plist">
         <resource-file src="src/ios/UnityAds.framework/Resources/en.lproj/InfoPlist.strings"/>
-<!-- -->		
+
         <resource-file src="src/ios/UnityAds.bundle" />
+-->        
 		<framework src="StoreKit.framework"/>
 		<framework src="AdSupport.framework"/>
         <framework src="CoreTelephony.framework"/>
