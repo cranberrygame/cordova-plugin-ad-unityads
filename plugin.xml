@@ -65,7 +65,7 @@
 
 
         <resource-file src="src/ios/UnityAds.framework/Resources/Info.plist">
-        <resource-file src="src/ios/UnityAds.framework/Resources/en.lproj/InfoPlist.strings"/>
+        <resource-file src="src/ios/UnityAds.framework/Resources/en.lproj"/>
 
 
 
