@@ -17,7 +17,10 @@
 @property NSString *videoAdPlacementId;
 @property NSString *rewardedVideoAdPlacementId;
 @property BOOL isTest;
-	
+//
+@property id myUnityAdsDelegate;
+@property NSInteger videoOrRewardedVideo;
+
 - (void) setLicenseKey: (CDVInvokedUrlCommand*)command;
 - (void) setUp:(CDVInvokedUrlCommand*)command;
 - (void) showVideoAd:(CDVInvokedUrlCommand*)command;

@@ -20,6 +20,14 @@ static NSString *TEST_REWARDED_VIDEO_AD_PLACEMENT_ID = @"rewardedVideoZone";
 @synthesize videoAdPlacementId;
 @synthesize rewardedVideoAdPlacementId;
 @synthesize isTest;
+//
+@synthesize myUnityAdsDelegate;
+@synthesize videoOrRewardedVideo;
+
+- (void) pluginInitialize {
+    [super pluginInitialize];    
+    //
+}
 
 - (void) setLicenseKey: (CDVInvokedUrlCommand*)command {
     NSString *email = [command.arguments objectAtIndex: 0];
@@ -141,11 +149,15 @@ static NSString *TEST_REWARDED_VIDEO_AD_PLACEMENT_ID = @"rewardedVideoZone";
 	[[UnityAds sharedInstance] setTestMode:self.isTest];
     //[[UnityAds sharedInstance] setDebugMode:YES];
     [[UnityAds sharedInstance] setDebugMode:NO];
-    [[UnityAds sharedInstance] setDelegate:[[MyUnityAdsDelegate alloc] initWithUnityAdsPlugin:self]];
+    
+    //[[UnityAds sharedInstance] setDelegate:[[MyUnityAdsDelegate alloc] initWithUnityAdsPlugin:self]];//
+    self.myUnityAdsDelegate = [[MyUnityAdsDelegate alloc] initWithUnityAdsPlugin:self];
+    [[UnityAds sharedInstance] setDelegate: self.myUnityAdsDelegate];
 }
 
 -(void) _showVideoAd {
-
+    videoOrRewardedVideo = 1;
+    
 	[[UnityAds sharedInstance] setZone:self.videoAdPlacementId];
 	//Use the canShow method to check for zone readiness,
 	//then use the canShowAds method to check for ad readiness.
@@ -156,7 +168,8 @@ static NSString *TEST_REWARDED_VIDEO_AD_PLACEMENT_ID = @"rewardedVideoZone";
 }
 
 -(void) _showRewardedVideoAd {
-
+    videoOrRewardedVideo = 2;
+    
 	[[UnityAds sharedInstance] setZone:self.rewardedVideoAdPlacementId];
 	//Use the canShow method to check for zone readiness,
 	//then use the canShowAds method to check for ad readiness.
@@ -213,12 +226,22 @@ static NSString *TEST_REWARDED_VIDEO_AD_PLACEMENT_ID = @"rewardedVideoZone";
 - (void)unityAdsDidShow{
     NSLog(@"unityAdsDidShow");
     
-    CDVPluginResult* pr = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"onRewardedVideoAdShown"];
-    [pr setKeepCallbackAsBool:YES];
-    [unityAdsPlugin.commandDelegate sendPluginResult:pr callbackId:unityAdsPlugin.callbackIdKeepCallback];
-    //CDVPluginResult* pr = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
-    //[pr setKeepCallbackAsBool:YES];
-    //[unityAdsPlugin.commandDelegate sendPluginResult:pr callbackId:unityAdsPlugin.callbackIdKeepCallback];
+	if (unityAdsPlugin.videoOrRewardedVideo == 1) {	
+		CDVPluginResult* pr = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"onVideoAdShown"];
+		[pr setKeepCallbackAsBool:YES];
+		[unityAdsPlugin.commandDelegate sendPluginResult:pr callbackId:unityAdsPlugin.callbackIdKeepCallback];
+		//CDVPluginResult* pr = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
+		//[pr setKeepCallbackAsBool:YES];
+		//[unityAdsPlugin.commandDelegate sendPluginResult:pr callbackId:unityAdsPlugin.callbackIdKeepCallback];
+	}
+	else if (unityAdsPlugin.videoOrRewardedVideo == 2) {
+		CDVPluginResult* pr = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"onRewardedVideoAdShown"];
+		[pr setKeepCallbackAsBool:YES];
+		[unityAdsPlugin.commandDelegate sendPluginResult:pr callbackId:unityAdsPlugin.callbackIdKeepCallback];
+		//CDVPluginResult* pr = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
+		//[pr setKeepCallbackAsBool:YES];
+		//[unityAdsPlugin.commandDelegate sendPluginResult:pr callbackId:unityAdsPlugin.callbackIdKeepCallback];
+	}
 }
 
 - (void)unityAdsWillHide{
@@ -227,12 +250,40 @@ static NSString *TEST_REWARDED_VIDEO_AD_PLACEMENT_ID = @"rewardedVideoZone";
 - (void)unityAdsDidHide{
     NSLog(@"unityAdsDidHide");
     
-    CDVPluginResult* pr = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"onRewardedVideoAdHidden"];
-    [pr setKeepCallbackAsBool:YES];
-    [unityAdsPlugin.commandDelegate sendPluginResult:pr callbackId:unityAdsPlugin.callbackIdKeepCallback];
-    //CDVPluginResult* pr = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
-    //[pr setKeepCallbackAsBool:YES];
-    //[unityAdsPlugin.commandDelegate sendPluginResult:pr callbackId:unityAdsPlugin.callbackIdKeepCallback];
+	if (unityAdsPlugin.videoOrRewardedVideo == 1) {
+		CDVPluginResult* pr = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"onVideoAdHidden"];
+		[pr setKeepCallbackAsBool:YES];
+		[unityAdsPlugin.commandDelegate sendPluginResult:pr callbackId:unityAdsPlugin.callbackIdKeepCallback];
+		//CDVPluginResult* pr = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
+		//[pr setKeepCallbackAsBool:YES];
+		//[unityAdsPlugin.commandDelegate sendPluginResult:pr callbackId:unityAdsPlugin.callbackIdKeepCallback];
+		
+		if ([[UnityAds sharedInstance] canShow] && [[UnityAds sharedInstance] canShowAds]) {
+			pr = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"onVideoAdLoaded"];
+			[pr setKeepCallbackAsBool:YES];
+			[unityAdsPlugin.commandDelegate sendPluginResult:pr callbackId:unityAdsPlugin.callbackIdKeepCallback];
+			//CDVPluginResult* pr = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
+			//[pr setKeepCallbackAsBool:YES];
+			//[unityAdsPlugin.commandDelegate sendPluginResult:pr callbackId:unityAdsPlugin.callbackIdKeepCallback];
+		}		
+	}
+	else if (unityAdsPlugin.videoOrRewardedVideo == 2) {
+		CDVPluginResult* pr = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"onRewardedVideoAdHidden"];
+		[pr setKeepCallbackAsBool:YES];
+		[unityAdsPlugin.commandDelegate sendPluginResult:pr callbackId:unityAdsPlugin.callbackIdKeepCallback];
+		//CDVPluginResult* pr = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
+		//[pr setKeepCallbackAsBool:YES];
+		//[unityAdsPlugin.commandDelegate sendPluginResult:pr callbackId:unityAdsPlugin.callbackIdKeepCallback];
+		
+		if ([[UnityAds sharedInstance] canShow] && [[UnityAds sharedInstance] canShowAds]) {
+			pr = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"onRewardedVideoAdLoaded"];
+			[pr setKeepCallbackAsBool:YES];
+			[unityAdsPlugin.commandDelegate sendPluginResult:pr callbackId:unityAdsPlugin.callbackIdKeepCallback];
+			//CDVPluginResult* pr = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
+			//[pr setKeepCallbackAsBool:YES];
+			//[unityAdsPlugin.commandDelegate sendPluginResult:pr callbackId:unityAdsPlugin.callbackIdKeepCallback];
+		}
+	}			
 }
 
 - (void)unityAdsWillLeaveApplication{
@@ -243,12 +294,16 @@ static NSString *TEST_REWARDED_VIDEO_AD_PLACEMENT_ID = @"rewardedVideoZone";
     NSLog(@"unityAdsVideoCompleted");
     
 	if (!skipped) {	
-		CDVPluginResult* pr = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"onRewardedVideoAdCompleted"];
-		[pr setKeepCallbackAsBool:YES];
-		[unityAdsPlugin.commandDelegate sendPluginResult:pr callbackId:unityAdsPlugin.callbackIdKeepCallback];
-		//CDVPluginResult* pr = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
-		//[pr setKeepCallbackAsBool:YES];
-		//[unityAdsPlugin.commandDelegate sendPluginResult:pr callbackId:unityAdsPlugin.callbackIdKeepCallback];
+		if (unityAdsPlugin.videoOrRewardedVideo == 1) {			
+		}
+		else if (unityAdsPlugin.videoOrRewardedVideo == 2) {	
+			CDVPluginResult* pr = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"onRewardedVideoAdCompleted"];
+			[pr setKeepCallbackAsBool:YES];
+			[unityAdsPlugin.commandDelegate sendPluginResult:pr callbackId:unityAdsPlugin.callbackIdKeepCallback];
+			//CDVPluginResult* pr = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
+			//[pr setKeepCallbackAsBool:YES];
+			//[unityAdsPlugin.commandDelegate sendPluginResult:pr callbackId:unityAdsPlugin.callbackIdKeepCallback];
+		}
 	}
 }
 

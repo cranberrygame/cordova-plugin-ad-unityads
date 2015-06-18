@@ -30,7 +30,7 @@ module.exports = {
 							self.onVideoAdLoaded();
 					}					
 					if (result == "onVideoAdShown") {
-						//self._loadedVideoAd = false;//comments this line on unitiyads ad only
+						self._loadedVideoAd = false;
 						self._isShowingVideoAd = true;
 					
 						if (self.onVideoAdShown)
@@ -50,7 +50,7 @@ module.exports = {
 							self.onRewardedVideoAdLoaded();
 					}					
 					else if (result == "onRewardedVideoAdShown") {
-						//self._loadedRewardedVideoAd = false;//comments this line on unitiyads ad only
+						self._loadedRewardedVideoAd = false;
 						self._isShowingRewardedVideoAd = true;
 					
 						if (self.onRewardedVideoAdShown)

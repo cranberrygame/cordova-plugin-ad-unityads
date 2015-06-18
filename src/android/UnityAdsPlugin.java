@@ -127,8 +127,10 @@ public class UnityAdsPlugin extends CordovaPlugin {
 	//
 	protected int videoOrRewardedVideo;
 	
-    public void initialize(CordovaInterface cordova, CordovaWebView webView) {
-		super.initialize(cordova, webView);
+    @Override
+	public void pluginInitialize() {
+		super.pluginInitialize();
+		//
     }
 	
 	//@Override
@@ -403,6 +405,15 @@ public class UnityAdsPlugin extends CordovaPlugin {
 				//PluginResult pr = new PluginResult(PluginResult.Status.ERROR);
 				//pr.setKeepCallback(true);
 				//callbackContextKeepCallback.sendPluginResult(pr);
+				
+				if(UnityAds.canShow() && UnityAds.canShowAds()) {
+					pr = new PluginResult(PluginResult.Status.OK, "onVideoAdLoaded");
+					pr.setKeepCallback(true);
+					callbackContextKeepCallback.sendPluginResult(pr);
+					//PluginResult pr = new PluginResult(PluginResult.Status.ERROR);
+					//pr.setKeepCallback(true);
+					//callbackContextKeepCallback.sendPluginResult(pr);
+				}					
 			}
 			else if (videoOrRewardedVideo == 2) {
 				PluginResult pr = new PluginResult(PluginResult.Status.OK, "onRewardedVideoAdHidden");
@@ -411,6 +422,15 @@ public class UnityAdsPlugin extends CordovaPlugin {
 				//PluginResult pr = new PluginResult(PluginResult.Status.ERROR);
 				//pr.setKeepCallback(true);
 				//callbackContextKeepCallback.sendPluginResult(pr);
+				
+				if(UnityAds.canShow() && UnityAds.canShowAds()) {
+					pr = new PluginResult(PluginResult.Status.OK, "onRewardedVideoAdLoaded");
+					pr.setKeepCallback(true);
+					callbackContextKeepCallback.sendPluginResult(pr);
+					//PluginResult pr = new PluginResult(PluginResult.Status.ERROR);
+					//pr.setKeepCallback(true);
+					//callbackContextKeepCallback.sendPluginResult(pr);
+				}				
 			}
 		}
 		//Called when the video playback is completed. 

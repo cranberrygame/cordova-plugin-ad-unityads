@@ -3,7 +3,7 @@ Cordova UnityAds plugin
 # Overview #
 Show unityads video ad and rewarded video ad (pays high $0.05 per ad view).
 
-[android, ios] [cordova cli] [xdk]
+[android, ios] [cordova cli] [xdk] [cocoon]
 
 Requires unityads account http://unityads.unity3d.com
 
