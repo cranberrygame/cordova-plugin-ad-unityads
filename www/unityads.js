@@ -68,10 +68,11 @@ module.exports = {
 					}
 				}
 				else {
-					//if (result["event"] == "onXXX") {
-					//	//result["message"]
+					//var event = result["event"];
+					//var location = result["message"];				
+					//if (event == "onXXX") {
 					//	if (self.onXXX)
-					//		self.onXXX(result);
+					//		self.onXXX(location);
 					//}
 				}
 			},

@@ -17,8 +17,8 @@ You can see Plugins For Cordova in one page: http://cranberrygame.github.io?refe
 # Change log #
 ```c
 
-To-Do:
-	Support ios callback event.
+1.0.28
+	Supported ios callback event.
 
 ```
 # Install plugin #
@@ -27,15 +27,23 @@ To-Do:
 https://cordova.apache.org/docs/en/edge/guide_cli_index.md.html#The%20Command-Line%20Interface - npm install -g cordova@5.0.0
 ```c
 cordova plugin add cordova-plugin-ad-unityads
+(when build error, use github url: cordova plugin add cordova plugin add https://github.com/cranberrygame/cordova-plugin-ad-unityads)
 ```
 
 ## Xdk ##
-https://software.intel.com/en-us/intel-xdk - Download XDK - XDK PORJECTS - [specific project] - CORDOVA 3.X HYBRID MOBILE APP SETTINGS - PLUGINS - Third Party Plugins - Add a Third Party Plugin - Get Plugin from the Web -
+https://software.intel.com/en-us/intel-xdk - Download XDK - XDK PORJECTS - [specific project] - CORDOVA HYBRID MOBILE APP SETTINGS - Plugins - Third Party Plugins - Add a Third Party Plugin - Get Plugin from the Web -
 ```c
 Name: unityads
-Plugin ID: com.cranberrygame.cordova.plugin.ad.unityads
-[v] Plugin is located in the Apache Cordova Plugins Registry
+Plugin ID: cordova-plugin-ad-unityads
+[Do not check] Plugin is located in the Apache Cordova Plugins Registry
+Repo URL: https://github.com/cranberrygame/cordova-plugin-ad-unityads
 ```
+
+```c
+Fix crosswalk build error:
+crosswalk 11 build error so use crosswalk upper version (crosswalk 12 or 14)
+```
+<img src="https://raw.githubusercontent.com/cranberrygame/cordova-plugin-ad-unityads/master/doc/fix_crosswalk_build_error.png"><br>
 
 ## Cocoon ##
 https://cocoon.io - Create project - [specific project] - Setting - Plugins - Custom - Git Url: https://github.com/cranberrygame/cordova-plugin-ad-unityads.git - INSTALL - Save<br>
@@ -47,9 +55,11 @@ https://build.phonegap.com/ - Apps - [specific project] - Update code - Zip file
 ```
 
 ## Construct2 ##
-Download construct2 plugin: http://www.paywithapost.de/pay?id=4ef3f2be-26e8-4a04-b826-6680db13a8c8
-<br>
-Now all the native plugins are installed automatically: https://plus.google.com/102658703990850475314/posts/XS5jjEApJYV
+Download construct2 plugin<br>
+https://dl.dropboxusercontent.com/u/186681453/pluginsforcordova/index.html<br>
+How to install c2 native plugins in xdk, cocoon and cordova cli<br>
+https://plus.google.com/102658703990850475314/posts/XS5jjEApJYV
+
 # Server setting #
 ```c
 ```
