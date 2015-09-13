@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-ad-unityads",
-  "version": "1.0.30",
+  "version": "1.0.31",
   "description": "Show unityads video ad and rewarded video ad",
   "cordova": {
     "id": "cordova-plugin-ad-unityads",
