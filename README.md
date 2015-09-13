@@ -3,7 +3,7 @@ Cordova UnityAds plugin
 # Overview #
 Show unityads video ad and rewarded video ad (pays high $0.05 per ad view).
 
-[android, ios] [cordova cli] [xdk] [cocoon]
+[android, ios] [cordova cli] [xdk] [cocoon] [phonegap build service]
 
 Requires unityads account http://unityads.unity3d.com
 
@@ -96,7 +96,7 @@ else if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad
 
 document.addEventListener("deviceready", function(){
 	//if no license key, 2% ad traffic share for dev support.
-	//you can get free license key from https://play.google.com/store/apps/details?id=com.cranberrygame.pluginsforcordova
+	//you can get paid license key: https://cranberrygame.github.io/request_cordova_ad_plugin_paid_license_key
 	//window.unityads.setLicenseKey("yourEmailId@yourEmaildDamin.com", "yourFreeLicenseKey");
 
 	window.unityads.setUp(gameId, videoAdPlacementId, rewardedVideoAdPlacementId, isTest);
