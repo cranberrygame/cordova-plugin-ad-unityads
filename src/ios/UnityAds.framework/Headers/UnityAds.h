@@ -5,7 +5,6 @@
 
 #import <Foundation/Foundation.h>
 #import <StoreKit/StoreKit.h>
-#import "ApplifierImpact.h"
 
 #define UALOG_LOG(levelName, fmt, ...) if ([[UnityAds sharedInstance] isDebugMode]) NSLog((@"%@ [T:0x%x %@] %s:%d " fmt), levelName, (unsigned int)[NSThread currentThread], ([[NSThread currentThread] isMainThread] ? @"M" : @"S"), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
 
@@ -56,6 +55,8 @@ extern NSString * const kUnityAdsOptionVideoUsesDeviceOrientation;
 - (void)setDebugMode:(BOOL)debugMode;
 - (void)setTestMode:(BOOL)testModeEnabled;
 - (void)enableUnityDeveloperInternalTestMode;
+- (void)setCampaignDataURL:(NSString *)campaignDataUrl;
+- (void)setUnityVersion:(NSString *)unityVersion;
 
 - (BOOL)isDebugMode;
 - (BOOL)startWithGameId:(NSString *)gameId andViewController:(UIViewController *)viewController;
@@ -63,8 +64,10 @@ extern NSString * const kUnityAdsOptionVideoUsesDeviceOrientation;
 - (BOOL)setViewController:(UIViewController *)viewController;
 - (BOOL)canShowAds;
 - (BOOL)canShow;
+- (BOOL)canShowZone:(NSString *)zoneId;
 - (BOOL)setZone:(NSString *)zoneId;
 - (BOOL)setZone:(NSString *)zoneId withRewardItem:(NSString *)rewardItemKey;
+- (NSString *)getZone;
 - (BOOL)show:(NSDictionary *)options;
 - (BOOL)show;
 - (BOOL)hide;

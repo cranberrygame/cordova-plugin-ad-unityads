@@ -7,8 +7,8 @@ Show unityads video ad and rewarded video ad (pays high $0.05 per ad view).
 
 Requires unityads account http://unityads.unity3d.com
 
-UnityAds SDK v1.4.2 April 15th, 2015 (android)<br>
-UnityAds SDK v1.3.12 March 10th, 2015 (ios)
+UnityAds SDK v1.5.3 October 9th, 2015 (android)<br>
+UnityAds SDK v1.5.3 October 9th, 2015 (ios)
 
 This is open source cordova plugin.
 
@@ -19,7 +19,8 @@ You can see Plugins For Cordova in one page: http://cranberrygame.github.io?refe
 
 1.0.28
 	Supported ios callback event.
-
+1.0.32
+    Updated SDK v1.5.3
 ```
 # Install plugin #
 
@@ -31,12 +32,10 @@ cordova plugin add cordova-plugin-ad-unityads
 ```
 
 ## Xdk ##
-https://software.intel.com/en-us/intel-xdk - Download XDK - XDK PORJECTS - [specific project] - CORDOVA HYBRID MOBILE APP SETTINGS - Plugins - Third Party Plugins - Add a Third Party Plugin - Get Plugin from the Web -
+https://software.intel.com/en-us/intel-xdk - Download XDK - XDK PORJECTS - [specific project] - CORDOVA HYBRID MOBILE APP SETTINGS - Plugin Management - Add Plugins to this Project - Third Party Plugins -
 ```c
-Name: unityads
+Plugin Source: Cordova plugin registry
 Plugin ID: cordova-plugin-ad-unityads
-[Do not check] Plugin is located in the Apache Cordova Plugins Registry
-Repo URL: https://github.com/cranberrygame/cordova-plugin-ad-unityads
 ```
 
 ```c
@@ -148,7 +147,7 @@ https://dl.dropboxusercontent.com/u/186681453/pluginsforcordova/unityads/apk.htm
 
 # Useful links #
 
-Plugins For Cordova<br>
+Cordova Plugins<br>
 http://cranberrygame.github.io?referrer=github
 
 # Credits #
