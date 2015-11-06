@@ -40,9 +40,9 @@ import java.util.*;//Random
 //
 import com.unity3d.ads.android.IUnityAdsListener;
 import com.unity3d.ads.android.UnityAds;
-import com.unity3d.ads.android.cache.UnityAdsCacheManager;
-import com.unity3d.ads.android.cache.UnityAdsDownloader;
-import com.unity3d.ads.android.cache.IUnityAdsCacheListener;
+////import com.unity3d.ads.android.cache.UnityAdsCacheManager;
+////import com.unity3d.ads.android.cache.UnityAdsDownloader;
+////import com.unity3d.ads.android.cache.IUnityAdsCacheListener;
 import com.unity3d.ads.android.campaign.UnityAdsCampaign;
 import com.unity3d.ads.android.campaign.UnityAdsCampaignHandler;
 import com.unity3d.ads.android.data.UnityAdsAdvertisingId;
