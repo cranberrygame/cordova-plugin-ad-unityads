@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="cordova-plugin-ad-unityads"
-    version="1.0.32">
+    version="1.0.33">
 	
     <name>Cordova UnityAds plugin</name>
     <description>Show unityads video ad and rewarded video ad</description>
@@ -27,23 +27,7 @@
 			</feature>
 		</config-file>
 
-		<config-file target="AndroidManifest.xml" parent="/*">
-			<uses-permission android:name="android.permission.INTERNET"/>
-			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>			
-		</config-file>
-
-		<config-file target="AndroidManifest.xml" parent="/manifest/application">
-			<activity android:name="com.unity3d.ads.android.view.UnityAdsFullscreenActivity"
-			android:configChanges=
-			 "fontScale|keyboard|keyboardHidden|locale|mnc|mcc|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode|touchscreen"
-			android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-			android:hardwareAccelerated="true" />
-		</config-file>
-
 		<source-file src="src/android/UnityAdsPlugin.java" target-dir="src/com/cranberrygame/cordova/plugin/ad/unityads" />
-		
-		<source-file src="src/android/unity-ads.jar" target-dir="libs" />
 	</platform>
 
 	<!-- ios -->
@@ -56,12 +40,8 @@
 
 		<header-file src="src/ios/UnityAdsPlugin.h" />
 		<source-file src="src/ios/UnityAdsPlugin.m" />
-
-		<framework src="src/ios/UnityAds.framework" custom="true"/>
-        <resource-file src="src/ios/UnityAds.bundle" />		
-		<framework src="StoreKit.framework"/>
-		<framework src="AdSupport.framework"/>
-        <framework src="CoreTelephony.framework"/>
-        <framework src="SystemConfiguration.framework"/>
 	</platform>
+	
+	<!-- dependency -->
+	<dependency id="cordova-plugin-ad-unityadssdk" url="https://github.com/cranberrygame/cordova-plugin-ad-unityadssdk" />	
 </plugin>

@@ -7,8 +7,8 @@ Show unityads video ad and rewarded video ad (pays high $0.05 per ad view).
 
 Requires unityads account http://unityads.unity3d.com
 
-UnityAds SDK v1.5.3 October 9th, 2015 (android)<br>
-UnityAds SDK v1.5.3 October 9th, 2015 (ios)
+UnityAds SDK v1.5.4 November 19th, 2015 (android)<br>
+UnityAds SDK v1.5.4 November 19th, 2015 (ios)
 
 This is open source cordova plugin.
 
@@ -21,6 +21,8 @@ You can see Plugins For Cordova in one page: http://cranberrygame.github.io?refe
 	Supported ios callback event.
 1.0.32
     Updated SDK v1.5.3
+1.0.33
+    Updated SDK v1.5.4
 ```
 # Install plugin #
 
