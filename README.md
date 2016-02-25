@@ -12,7 +12,7 @@ UnityAds SDK v1.5.4 November 19th, 2015 (ios)
 
 This is open source cordova plugin.
 
-You can see Plugins For Cordova in one page: http://cranberrygame.github.io?referrer=github
+You can see Cordova Plugins in one page: http://cranberrygame.github.io?referrer=github
 
 # Change log #
 ```c
@@ -27,7 +27,7 @@ You can see Plugins For Cordova in one page: http://cranberrygame.github.io?refe
 # Install plugin #
 
 ## Cordova cli ##
-https://cordova.apache.org/docs/en/edge/guide_cli_index.md.html#The%20Command-Line%20Interface - npm install -g cordova@5.0.0
+https://cordova.apache.org/docs/en/edge/guide_cli_index.md.html#The%20Command-Line%20Interface - npm install -g cordova@6.0.0
 ```c
 cordova plugin add cordova-plugin-ad-unityads
 (when build error, use github url: cordova plugin add cordova plugin add https://github.com/cranberrygame/cordova-plugin-ad-unityads)

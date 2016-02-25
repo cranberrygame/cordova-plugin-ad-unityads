@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="cordova-plugin-ad-unityads"
-    version="1.0.33">
+    version="1.0.34">
 	
     <name>Cordova UnityAds plugin</name>
     <description>Show unityads video ad and rewarded video ad</description>
@@ -15,7 +15,7 @@
 	    <engine name="cordova" version=">=3.0.0" />
 	</engines>
  	
-    <js-module src="www/unityads.js">
+    <js-module src="www/unityads.js" name="unityads">
         <clobbers target="window.unityads" />
     </js-module>    
     
